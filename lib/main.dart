@@ -10,7 +10,7 @@ class Homepage extends StatelessWidget {
     return MaterialApp(
         title: 'Weather reminder',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.blue,
         ),
         home: HomepageScreen());
   }

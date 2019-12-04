@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uhk_smap_smart_weather_reminder/screen/addReminder/AddReminderScreen.dart';
-import 'package:uhk_smap_smart_weather_reminder/screen/homepage/HomepageScreen.dart';
 
-class HomepageScreenState extends State<HomepageScreen> {
+class AddReminderScreenState extends State<AddReminderScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   double boxWidth;
 
@@ -27,37 +26,14 @@ class HomepageScreenState extends State<HomepageScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text(
-          'Weather reminder',
-          style: TextStyle(
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.add),
-            color: Colors.white,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AddReminderScreen()),
-              );
-            },
-          ),
-        ],
-        leading: Column(
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.edit),
-              color: Colors.white,
-              onPressed: () {
-                print('ahoj');
-              },
+          backgroundColor: Colors.black,
+          title: Text(
+            'New reminder',
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
             ),
-          ],
-        )
-        ),
+          ),
+      ),
       body: Container(
         color: Colors.black12.withOpacity(0.06),
         child: Row(

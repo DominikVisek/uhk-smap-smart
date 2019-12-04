@@ -313,6 +313,8 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = QX9CC245G9;
 				ENABLE_BITCODE = NO;
+				FLUTTER_FRAMEWORK_DIR = "/Users/dominikvisek/Documents/mobile/flutter-1.9.1.6/bin/cache/artifacts/engine/ios";
+				FLUTTER_ROOT = "/Users/dominikvisek/Documents/mobile/flutter-1.9.1.6";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -447,6 +449,8 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = QX9CC245G9;
 				ENABLE_BITCODE = NO;
+				FLUTTER_FRAMEWORK_DIR = "/Users/dominikvisek/Documents/mobile/flutter-1.9.1.6/bin/cache/artifacts/engine/ios";
+				FLUTTER_ROOT = "/Users/dominikvisek/Documents/mobile/flutter-1.9.1.6";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
@@ -475,6 +479,8 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = QX9CC245G9;
 				ENABLE_BITCODE = NO;
+				FLUTTER_FRAMEWORK_DIR = "/Users/dominikvisek/Documents/mobile/flutter-1.9.1.6/bin/cache/artifacts/engine/ios";
+				FLUTTER_ROOT = "/Users/dominikvisek/Documents/mobile/flutter-1.9.1.6";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
