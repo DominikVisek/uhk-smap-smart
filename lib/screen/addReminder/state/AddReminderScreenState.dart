@@ -32,7 +32,11 @@ class AddReminderScreenState extends State<AddReminderScreen> {
         color: Colors.black12.withOpacity(0.06),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[NewReminderForm()],
+          children: <Widget>[NewReminderForm(
+            onSubmit: (formData){
+              //TODO: SAVE to DATABASE
+            },
+          )],
         ),
       ),
     );
