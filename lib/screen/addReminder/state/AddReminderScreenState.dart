@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uhk_smap_smart_weather_reminder/config/env.dart';
 import 'package:uhk_smap_smart_weather_reminder/screen/addReminder/AddReminderScreen.dart';
 import 'package:uhk_smap_smart_weather_reminder/widget/reminder/newReminderForm.dart';
 
@@ -20,7 +21,7 @@ class AddReminderScreenState extends State<AddReminderScreen> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: MAIN_APPLICATION_COLOR,
         title: Text(
           'New reminder',
           style: TextStyle(
@@ -28,17 +29,18 @@ class AddReminderScreenState extends State<AddReminderScreen> {
           ),
         ),
       ),
-      body: Container(
-        color: Colors.black12.withOpacity(0.06),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[NewReminderForm(
-            onSubmit: (formData){
-              //TODO: SAVE to DATABASE
-            },
-          )],
+      body:
+      Center(
+        child: SingleChildScrollView(
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            NewReminderForm(
+              preSave: (formData, reminder) {},
+            ),
+          ],
         ),
       ),
-    );
+    ),);
   }
 }
