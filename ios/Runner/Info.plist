@@ -22,6 +22,15 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Need current location access</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Get your current location for delivery</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -43,9 +52,5 @@
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
 	<string>YES</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-    <string>Need current location access</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>Get your current location for delivery</string>
 </dict>
 </plist>

@@ -55,8 +55,8 @@ class NewReminderFormState extends State<NewReminderForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
-      child: new GestureDetector(
+        key: _formKey,
+        child: new GestureDetector(
           onTap: () {
             FocusScope.of(context).requestFocus(new FocusNode());
           },
@@ -170,7 +170,7 @@ class NewReminderFormState extends State<NewReminderForm> {
                           return isDigitsOnly == null
                               ? 'Input needs to be digits only'
                               : null;
-                         },
+                        },
                       ),
                     ],
                   ),
@@ -389,14 +389,14 @@ class NewReminderFormState extends State<NewReminderForm> {
               ),
             ],
           ),
-      )
+        )
     );
   }
 
   void showPlacePicker() async {
-    LocationResult result = await Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) =>
-        PlacePicker(GOOGLE_API_KEY)));
+    LocationResult result = await Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) =>
+            PlacePicker(GOOGLE_API_KEY)));
 
     this._formData.location = result;
   }

@@ -40,12 +40,31 @@ class Reminder {
       };
 
   String getTime() {
-    if(time == null){
+    if (time == null) {
       return time;
     }
 
     DateTime dt = DateTime.parse(this.time);
 
     return dt.hour.toString() + ":" + dt.minute.toString();
+  }
+
+  DateTime getTimeToday() {
+    if (time == null) {
+      return null;
+    }
+
+    DateTime dt = DateTime.parse(this.time);
+    DateTime now = DateTime.now();
+
+    return new DateTime(
+        now.year,
+        now.month,
+        now.day,
+        dt.hour,
+        dt.minute,
+        dt.second,
+        dt.millisecond,
+        dt.microsecond);
   }
 }

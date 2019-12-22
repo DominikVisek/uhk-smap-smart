@@ -27,9 +27,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   flutter_datetime_picker: 1.2.5
-  place_picker: ^0.9.10
+  place_picker: any
   http: ^0.12.0+2
   material_design_icons_flutter: 3.4.4795
+  background_fetch: ^0.3.2
+  flutter_local_notifications: any
 
 dev_dependencies:
   flutter_test:
