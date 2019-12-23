@@ -43,6 +43,7 @@ class DBProvider {
           "longitude DOUBLE,"
           "name TEXT,"
           "description TEXT,"
+          "daysBeforeNotify INTEGER,"
           "temperature DOUBLE"
           ")");
     });

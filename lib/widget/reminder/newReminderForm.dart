@@ -33,6 +33,7 @@ class NewReminderFormState extends State<NewReminderForm> {
   DBProvider _dbProvider;
 
   TextEditingController temperatureController = new TextEditingController();
+  TextEditingController daysBeforeNotifyController = new TextEditingController();
   TextEditingController nameController = new TextEditingController();
   TextEditingController descriptionController = new TextEditingController();
 
@@ -164,6 +165,49 @@ class NewReminderFormState extends State<NewReminderForm> {
                         inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
                         decoration: InputDecoration(
                           prefixIcon: Icon(MdiIcons.temperatureCelsius, color: MAIN_APPLICATION_COLOR),
+                        ),
+                        validator: (input) {
+                          final isDigitsOnly = int.tryParse(input);
+                          return isDigitsOnly == null
+                              ? 'Input needs to be digits only'
+                              : null;
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.9,
+                          child: Text('Days before notification',
+                            textAlign: TextAlign.left,
+                            style: TextStyle(
+                              color: MAIN_APPLICATION_COLOR,
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                      ),
+                      TextFormField(
+                        controller: this.daysBeforeNotifyController,
+                        autovalidate: true,
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.notifications, color: MAIN_APPLICATION_COLOR),
                         ),
                         validator: (input) {
                           final isDigitsOnly = int.tryParse(input);
@@ -379,6 +423,7 @@ class NewReminderFormState extends State<NewReminderForm> {
                       reminder.name = this.nameController.text;
                       reminder.description = this.descriptionController.text;
                       reminder.temperature = double.parse(this.temperatureController.text);
+                      reminder.daysBeforeNotify = int.parse(this.daysBeforeNotifyController.text);
 
                       this.preSave(this._formData, reminder);
                       this._dbProvider.createReminder(reminder);

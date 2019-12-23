@@ -45,11 +45,10 @@ void _onBackgroundFetch() async {
     if (current
         .difference(reminder.getTimeToday())
         .inMinutes < 8) {
+      // todo send to api reminder.daysBeforeNotification which contains day of weather forecast : api is not free.
       OpenWeatherItem item = await OpenWeatherProvider().getByCoordinates(reminder.latitude.toString(), reminder.longitude.toString());
       double itemTemp = item.temp - 273.15;
-      print(itemTemp);
       if (itemTemp > reminder.temperature - 2.0 && itemTemp < reminder.temperature + 2.0) {
-        print('yes');
         showNotification(reminder);
       }
     }

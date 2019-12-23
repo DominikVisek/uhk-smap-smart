@@ -5,6 +5,7 @@ class Reminder {
   double longitude;
   String name;
   String description;
+  int daysBeforeNotify;
   double temperature;
 
   Reminder({
@@ -14,6 +15,7 @@ class Reminder {
     this.longitude,
     this.name,
     this.description,
+    this.daysBeforeNotify,
     this.temperature
   });
 
@@ -25,6 +27,7 @@ class Reminder {
           longitude: json["longitude"],
           name: json["name"],
           description: json["description"],
+          daysBeforeNotify: json["daysBeforeNotify"],
           temperature: json['temperature']
       );
 
@@ -36,6 +39,7 @@ class Reminder {
         "longitude": longitude,
         "name": name,
         "description": description,
+        "daysBeforeNotify": daysBeforeNotify,
         "temperature": temperature,
       };
 
