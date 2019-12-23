@@ -402,34 +402,63 @@ class NewReminderFormState extends State<NewReminderForm> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: RaisedButton(
-                  onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      if (this._formData.time == null ||
-                          this._formData.location == null) {
-                        Scaffold.of(context)
-                            .showSnackBar(
-                            SnackBar(content: Text('Data are invalid')));
-                        return;
-                      }
-                      Scaffold.of(context)
-                          .showSnackBar(SnackBar(content: Text('Processing Data')));
+                padding: const EdgeInsets.all(22.0),
+                child: Container(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      RaisedButton(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+                        elevation: 4.0,
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            if (this._formData.time == null ||
+                                this._formData.location == null) {
+                              Scaffold.of(context)
+                                  .showSnackBar(
+                                  SnackBar(content: Text('Data are invalid')));
+                              return;
+                            }
+                            Scaffold.of(context)
+                                .showSnackBar(SnackBar(content: Text('Processing Data')));
 
-                      Reminder reminder = new Reminder();
-                      reminder.time = this._formData.time.toIso8601String();
-                      reminder.longitude = this._formData.location.latLng.longitude;
-                      reminder.latitude = this._formData.location.latLng.latitude;
-                      reminder.name = this.nameController.text;
-                      reminder.description = this.descriptionController.text;
-                      reminder.temperature = double.parse(this.temperatureController.text);
-                      reminder.daysBeforeNotify = int.parse(this.daysBeforeNotifyController.text);
+                            Reminder reminder = new Reminder();
+                            reminder.time = this._formData.time.toIso8601String();
+                            reminder.longitude = this._formData.location.latLng.longitude;
+                            reminder.latitude = this._formData.location.latLng.latitude;
+                            reminder.name = this.nameController.text;
+                            reminder.description = this.descriptionController.text;
+                            reminder.temperature = double.parse(this.temperatureController.text);
+                            reminder.daysBeforeNotify = int.parse(this.daysBeforeNotifyController.text);
 
-                      this.preSave(this._formData, reminder);
-                      this._dbProvider.createReminder(reminder);
-                    }
-                  },
-                  child: Text('Submit'),
+                            this.preSave(this._formData, reminder);
+                            this._dbProvider.createReminder(reminder);
+                          }
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 10.0),
+                          height: 50,
+                          width: MediaQuery
+                              .of(context)
+                              .size
+                              .width * 0.7,
+                          child: Text(
+                            "Create",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22.0,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        color: MAIN_APPLICATION_COLOR,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
